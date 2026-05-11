@@ -5,10 +5,11 @@ import com.companycore.database.dao.employee.EmployeeDaoImpl;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -36,6 +37,8 @@ public class LoginController {
             Stage btnStage = (Stage) btnLogin.getScene().getWindow();
             btnStage.close();
             openMainMenu();
+        } else {
+            loginFailedPopup();
         }
     }
 
@@ -51,5 +54,28 @@ public class LoginController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void loginFailedPopup() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText("Login failed \nUsername or Password wrong");
+        alert.setContentText("Please try logging in again.");
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        dialogPane.getStyleClass().add("login-failed-alert");
+
+        Stage stage = (Stage) dialogPane.getScene().getWindow();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        dialogPane.getScene().setFill(Color.TRANSPARENT);
+
+        alert.setOnShowing(e -> {
+            double screenWidth = Screen.getPrimary().getVisualBounds().getWidth();
+
+            stage.setX((screenWidth - dialogPane.getWidth()) / 2);
+            stage.setY(275);
+        });
+
+        alert.showAndWait();
     }
 }
