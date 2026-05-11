@@ -1,6 +1,6 @@
 package com.companycore.database.dao.employee;
 
-import com.companycore.database.model.Employee;
+import com.companycore.database.model.employee.Employee;
 
 public interface EmployeeDao {
     void addEmployee(Employee employee);

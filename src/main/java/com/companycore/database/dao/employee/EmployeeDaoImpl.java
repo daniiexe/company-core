@@ -1,6 +1,6 @@
 package com.companycore.database.dao.employee;
 
-import com.companycore.database.model.Employee;
+import com.companycore.database.model.employee.Employee;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,7 +1,7 @@
 package com.companycore.database.service.Employee;
 
 import com.companycore.database.dao.employee.EmployeeDao;
-import com.companycore.database.model.Employee;
+import com.companycore.database.model.employee.Employee;
 
 public class EmployeeService {
     private EmployeeDao employeeDao;

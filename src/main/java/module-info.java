@@ -4,4 +4,7 @@ module com.companycore.companycore {
     requires java.sql;
     requires com.zaxxer.hikari;
 
+
+    opens com.companycore to javafx.fxml;
+    exports com.companycore;
 }

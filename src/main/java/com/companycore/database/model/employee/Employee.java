@@ -1,4 +1,4 @@
-package com.companycore.database.model;
+package com.companycore.database.model.employee;
 
 public class Employee {
     private int id;
