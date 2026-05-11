@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane prefHeight="600.0" prefWidth="900.0" fx:id="loginWindow" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@style/style.css">
+<StackPane fx:id="loginWindow" prefHeight="600.0" prefWidth="900.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.companycore.auth.controller.LoginController">
     <children>
 
         <Pane opacity="0.2" />
 
-        <VBox fx:id="loginContent" alignment="CENTER" maxWidth="400.0" maxHeight="500.0" spacing="20.0">
+        <VBox fx:id="loginContent" alignment="CENTER" maxHeight="500.0" maxWidth="400.0" spacing="20.0">
             <padding>
                 <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </padding>
@@ -23,17 +24,20 @@
 
                 <VBox fx:id="loginContentForm" alignment="CENTER_LEFT" spacing="10.0">
                     <children>
-                        <Label fx:id="lbLogin" text="Login"/>
+                        <Label fx:id="lbLogin" text="Login" />
 
-                        <Label fx:id="lbEmail" text="Email" />
-                        <TextField fx:id="tfEmail" promptText="username@gmail.com" />
+                        <Label fx:id="lbUsername" styleClass="lbForm" text="Username" />
+                        <TextField fx:id="tfUsername" prefHeight="37" promptText="Username" styleClass="tfForm" />
 
-                        <Label fx:id="lbPassword" text="Password" />
-                        <PasswordField fx:id="pfPassword" promptText="Password" />
+                        <Label fx:id="lbPassword" styleClass="lbForm" text="Password" />
+                        <PasswordField fx:id="pfPassword" prefHeight="37" promptText="Password" styleClass="tfForm" />
 
-                        <Hyperlink fx:id="hlForgotPassword" text="Forgot Password?"/>
+                        <Hyperlink fx:id="hlForgotPassword" text="Forgot Password?" />
 
-                        <Button fx:id="btnLogin" text="Log in" />
+                        <Button fx:id="btnLogin" prefHeight="37.0" prefWidth="350.0" text="Log in">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                     </children>
                 </VBox>
             </children>

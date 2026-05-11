@@ -7,4 +7,6 @@ module com.companycore.companycore {
 
     opens com.companycore to javafx.fxml;
     exports com.companycore;
+    opens com.companycore.auth.controller to javafx.fxml;
+    exports com.companycore.auth.controller;
 }

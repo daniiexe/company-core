@@ -19,4 +19,13 @@ public class Launcher extends Application {
         stage.setTitle("Login");
         stage.show();
     }
+
+    public static void main(String[] args) {
+        System.out.println("--- DEBUG DATENBANK ---");
+        System.out.println("URL:  " + System.getenv("DB_URL"));
+        System.out.println("USER: " + System.getenv("DB_USER"));
+        System.out.println("-----------------------");
+
+        Application.launch(Launcher.class, args);
+    }
 }
